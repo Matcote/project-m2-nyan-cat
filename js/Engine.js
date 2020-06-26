@@ -16,6 +16,9 @@ class Engine {
     this.enemies = [];
     // We add the background image to the game
     addBackground(this.root);
+    //my edits:
+    //add scoreboard
+    this.scoreboard = new Text(this.root, 20, 20);
   }
 
   // The gameLoop will run every few milliseconds. It does several things
@@ -60,7 +63,7 @@ class Engine {
       window.alert("Game over");
       return;
     }
-
+    this.scoreboard.update(score);
     // If the player is not dead, then we put a setTimeout to run the gameLoop in 20 milliseconds
     setTimeout(this.gameLoop, 20);
   };
@@ -71,7 +74,7 @@ class Engine {
     let playerX = this.player.x;
     let dead = false;
     this.enemies.forEach(function (obj) {
-      if (obj.x === playerX && obj.y > 290 && obj.y < 490) {
+      if (obj.x === playerX && obj.y > 340 && obj.y < 490) {
         dead = true;
       }
     });
