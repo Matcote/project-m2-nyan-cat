@@ -69,6 +69,8 @@ class Enemy {
       this.root.removeChild(this.domElement);
       this.destroyed = true;
       score += 2;
+      let pop2 = pop.cloneNode();
+      pop2.play();
     }
   }
 }

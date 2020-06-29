@@ -119,6 +119,8 @@ class Engine {
       } else if (count === 2) {
         blackBox.style.background = "white";
         blackBox2.style.opacity = "0";
+      } else if (count === 3) {
+        clearInterval(light);
       }
     }, 3000);
   };

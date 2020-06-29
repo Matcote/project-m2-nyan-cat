@@ -8,6 +8,7 @@ let difficulty = student;
 let button = document.querySelector("button");
 //mine
 let score = 0;
+const pop = new Audio("images/thought-pop.wav");
 
 // keydownHandler is a variable that refers to a function. The function has one parameter
 // (does the parameter name matter?) which is called event. As we will see below, this function
