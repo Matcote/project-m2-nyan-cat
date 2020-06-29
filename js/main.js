@@ -2,6 +2,10 @@
 // we see that it has a div with an id of `"app"`
 const gameEngine = new Engine(document.getElementById("app"));
 
+let student = 4;
+let sensei = 2;
+let difficulty = student;
+let button = document.querySelector("button");
 //mine
 let score = 0;
 
@@ -27,4 +31,10 @@ const keydownHandler = (event) => {
 document.addEventListener("keydown", keydownHandler);
 
 // We call the gameLoop method to start the game
-gameEngine.gameLoop();
+startGame = () => {
+  document.getElementById("menu").style.display = "none";
+  if (document.getElementById("sensei").checked === true) {
+    difficulty = sensei;
+  }
+  gameEngine.gameLoop();
+};

@@ -1,9 +1,47 @@
 <html>
   <head>
     <title>Path to Enlightenment</title>
+    <style>
+      #menu {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        height: 275px;
+        width: 300px;
+        background-color: blanchedalmond;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 12px;
+        border: 3px solid rosybrown;
+        z-index: 1000;
+        font-family: "Cinzel", serif;
+        text-align: center;
+      }
+      button {
+        border: 3px solid black;
+        border-radius: 4px;
+        padding: 4px 12px;
+        color: blanchedalmond;
+        background-color: rosybrown;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div id="menu">
+        <h2>Choose your<br />difficulty</h2>
+        <input type="radio" id="student" name="difficulty" checked />
+        <label for="student">Student</label><br />
+        <input type="radio" id="sensei" name="difficulty" />
+        <label for="sensei">Sensei</label><br />
+        <button onclick="startGame()">Begin</button>
+      </div>
+    </div>
     <script src="js/data.js"></script>
     <script src="js/Enemy.js"></script>
     <script src="js/engine-utilities.js"></script>

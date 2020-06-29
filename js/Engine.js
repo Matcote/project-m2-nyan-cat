@@ -60,10 +60,12 @@ class Engine {
     // We check if the player is dead. If he is, we alert the user
     // and return from the method (Why is the return statement important?)
     if (this.isPlayerDead()) {
-      window.alert("Game over");
+      document.querySelector("h2").innerHTML = `Lost in thought!<br>Try again?`;
+      document.getElementById("menu").style.display = "flex";
+      score = -30;
       return;
     }
-    this.scoreboard.update(score);
+    this.scoreboard.update(`${score}%`);
     if (score >= 100) {
       // window.alert("You have reached Nirvana!");
       this.reachedNirvana();

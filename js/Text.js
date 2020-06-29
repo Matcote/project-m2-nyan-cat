@@ -23,6 +23,6 @@ class Text {
 
   // This method is used to update the text displayed in the DOM element
   update(txt) {
-    this.domElement.innerText = `${txt}%`;
+    this.domElement.innerText = txt;
   }
 }
