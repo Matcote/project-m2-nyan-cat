@@ -68,7 +68,7 @@ class Enemy {
     if (this.y > GAME_HEIGHT) {
       this.root.removeChild(this.domElement);
       this.destroyed = true;
-      score += 10;
+      score += 2;
     }
   }
 }
