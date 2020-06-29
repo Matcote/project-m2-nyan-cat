@@ -11,6 +11,8 @@ class Text {
     div.style.left = xPos;
     div.style.top = yPos;
     div.style.color = "white";
+    div.style.webkitTextStrokeColor = "black";
+    div.style.webkitTextStrokeWidth = "1px";
     div.style.font = "bold 30px Impact";
     div.style.zIndex = 2000;
 
@@ -21,6 +23,6 @@ class Text {
 
   // This method is used to update the text displayed in the DOM element
   update(txt) {
-    this.domElement.innerText = txt;
+    this.domElement.innerText = `${txt}%`;
   }
 }

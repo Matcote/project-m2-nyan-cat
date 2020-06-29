@@ -64,6 +64,11 @@ class Engine {
       return;
     }
     this.scoreboard.update(score);
+    if (score >= 100) {
+      // window.alert("You have reached Nirvana!");
+      this.reachedNirvana();
+      return;
+    }
     // If the player is not dead, then we put a setTimeout to run the gameLoop in 20 milliseconds
     setTimeout(this.gameLoop, 20);
   };
@@ -83,5 +88,36 @@ class Engine {
     } else {
       return false;
     }
+  };
+
+  reachedNirvana = () => {
+    this.scoreboard.update("Nirvana");
+    const blackBox = document.getElementById("blackBox");
+    blackBox.style.opacity = "100";
+    const audio = new Audio("images/meditation.flac");
+    audio.volume = 0.03;
+    audio.play();
+
+    let fadeInOut = setInterval(function () {
+      if (audio.currentTime <= 2 && audio.volume < 0.99) {
+        audio.volume += 0.01;
+      }
+      if (audio.currentTime >= 7 && audio.volume > 0) {
+        audio.volume -= 0.01;
+      }
+      if (audio.volume <= 0.02) {
+        clearInterval(fadeInOut);
+      }
+    }, 20);
+    let count = 0;
+    let light = setInterval(function () {
+      count++;
+      if (count === 1) {
+        blackBox2.style.opacity = "100";
+      } else if (count === 2) {
+        blackBox.style.background = "white";
+        blackBox2.style.opacity = "0";
+      }
+    }, 3000);
   };
 }

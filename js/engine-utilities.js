@@ -44,8 +44,9 @@ const addBackground = (root) => {
 
   // We set its src attribute and the height and width CSS attributes
   bg.src = "images/zen-garden.jpg";
-  bg.style.height = `${GAME_HEIGHT}px`;
+
   bg.style.width = `${GAME_WIDTH}px`;
+  bg.style.backgroundRepeat = "no-repeat";
 
   // We add it to the root DOM node
   root.append(bg);
@@ -59,8 +60,36 @@ const addBackground = (root) => {
   whiteBox.style.zIndex = 100;
   whiteBox.style.position = "absolute";
   whiteBox.style.top = `${GAME_HEIGHT}px`;
-  whiteBox.style.height = `${ENEMY_HEIGHT}px`;
+  whiteBox.style.height = `${ENEMY_HEIGHT * 4}px`;
   whiteBox.style.width = `${GAME_WIDTH}px`;
   whiteBox.style.background = "#fff";
   root.append(whiteBox);
+
+  //end of game animation prep
+  const blackBox = document.createElement("div");
+  blackBox.style.zIndex = 100;
+  blackBox.style.position = "absolute";
+  blackBox.style.top = "0";
+  blackBox.style.height = `${GAME_HEIGHT}px`;
+  blackBox.style.width = `${GAME_WIDTH}px`;
+  blackBox.style.background = "black";
+  blackBox.style.opacity = "0";
+  blackBox.style.transitionProperty = "opacity, background";
+  blackBox.style.transitionDuration = "3s";
+  blackBox.id = "blackBox";
+  root.append(blackBox);
+
+  const blackBox2 = document.createElement("div");
+  blackBox2.style.zIndex = 101;
+  blackBox2.style.position = "absolute";
+  blackBox2.style.top = "0";
+  blackBox2.style.height = `${GAME_HEIGHT}px`;
+  blackBox2.style.width = `${GAME_WIDTH}px`;
+  blackBox2.style.background =
+    "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 45%)";
+  blackBox2.style.opacity = "0";
+  blackBox2.style.transitionProperty = "opacity";
+  blackBox2.style.transitionDuration = "3s";
+  blackBox2.id = "blackBox2";
+  root.append(blackBox2);
 };
