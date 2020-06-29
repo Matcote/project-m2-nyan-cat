@@ -62,7 +62,7 @@ class Engine {
     if (this.isPlayerDead()) {
       document.querySelector("h2").innerHTML = `Lost in thought!<br>Try again?`;
       document.getElementById("menu").style.display = "flex";
-      score = -30;
+      score = -6;
       return;
     }
     this.scoreboard.update(`${score}%`);
