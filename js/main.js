@@ -35,6 +35,8 @@ startGame = () => {
   document.getElementById("menu").style.display = "none";
   if (document.getElementById("sensei").checked === true) {
     difficulty = sensei;
+  } else if (document.getElementById("sensei").checked !== true) {
+    difficulty = student;
   }
   gameEngine.gameLoop();
 };
