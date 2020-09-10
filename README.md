@@ -7,3 +7,7 @@ This is a game where the goal is to dodge your thoughts, and get to 100%. There 
 This is my first project done using Javascript. The game was made over the course of ~3 days. I used sounds from freesound.org and found all the images online, except the thought bubbles which i customized myself.
 
 Have fun!!!
+
+## Preview
+
+<img src='./images/preview.png'>
